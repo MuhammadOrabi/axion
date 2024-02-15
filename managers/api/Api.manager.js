@@ -11,7 +11,7 @@ module.exports = class ApiHandler {
      * @param {string} prop with key to scan for exposed methods
      */
 
-    constructor({config, cortex, cache, managers, mwsRepo, prop}){
+    constructor({config, cortex, cache, managers, mwsRepo, prop, permissionsProp='fnPermssions'}){
         this.config        = config;
         this.cache         = cache; 
         this.cortex        = cortex;
@@ -19,6 +19,7 @@ module.exports = class ApiHandler {
         this.mwsRepo       = mwsRepo;
         this.mwsExec       = this.managers.mwsExec;
         this.prop          = prop
+        this.permissionsProp = permissionsProp;
         this.exposed       = {};
         this.methodMatrix  = {};
         this.auth          = {};
@@ -166,6 +167,8 @@ module.exports = class ApiHandler {
                     return this.managers.responseDispatcher.dispatch(res, {ok: false, errors: result.errors});
                 } else if(result.error){
                     return this.managers.responseDispatcher.dispatch(res, {ok: false, message: result.error});
+                } else if (result.message) {
+                    return this.managers.responseDispatcher.dispatch(res, {ok: true, message: result.message });
                 } else {
                     return this.managers.responseDispatcher.dispatch(res, {ok:true, data: result});
                 }
