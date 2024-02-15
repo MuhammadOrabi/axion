@@ -19,6 +19,7 @@ Guidelines and Considerations:
 - Using docker
   - `docker-compose up -d`
 - Using node
+  - `npm install`   
   - `node app.js`
   - Note: make sure that mongo and redis are up and running and make sure to set a valid `MONGO_URI` and `REDIS_URI` in the .env file
 
