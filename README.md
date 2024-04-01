@@ -22,7 +22,14 @@ Guidelines and Considerations:
   - `npm install`   
   - `node app.js`
   - Note: make sure that mongo and redis are up and running and make sure to set a valid `MONGO_URI` and `REDIS_URI` in the .env file
+- then you will need to seed an admin using using admin api `http://[::]:5222/api/user/seed - GET request` with the value of `SUPER_ADMIN_INITIAL_PASSWORD` in the .env file
 
 
 ## API Documentation
-https://documenter.getpostman.com/view/20473899/2sA2r6Y4nL
+https://documenter.getpostman.com/view/20473899/2sA35HWL7g
+
+
+## Admin Credentials
+`email: admin@mail.com`
+
+`password: P@ssw0rd`
