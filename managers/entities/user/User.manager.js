@@ -11,13 +11,17 @@ module.exports = class User {
         this.mongomodels         = mongomodels;
         this.cache               = cache;
         this.tokenManager        = managers.token;
-        this.userExposed         = [
+        this.adminExposed         = [
             'get=seed',
             'login',
             'create',
             'get=list',
             'put=update',
             'delete',
+        ];
+        this.userExposed         = [
+            'login',
+            'put=update',
         ];
         this.fnPermssions = {
             'create': [roles.superAdmin],

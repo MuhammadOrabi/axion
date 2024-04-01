@@ -9,11 +9,13 @@ module.exports = class School {
         this.mongomodels         = mongomodels;
         this.cache               = cache;
         this.tokenManager        = managers.token;
-        this.userExposed         = [
+        this.adminExposed         = [
             'create',
             'get=list',
             'put=update',
             'delete',
+        ];
+        this.userExposed         = [
             'get=get',
         ];
         this.fnPermssions = {

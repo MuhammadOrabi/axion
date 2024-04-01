@@ -9,7 +9,7 @@ module.exports = {
             path: 'email',
         },
         {
-            model: 'password',
+            path: 'password',
             required: true,
         },
     ],
